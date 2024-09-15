@@ -10,7 +10,7 @@ def index(request):
         messages.error(request, 'Usuário não logado')
         return redirect('login')
 
-    fotografias = Fotografia.objects.order_by("data_fotografia").filter(publicada=True)
+    fotografias = Fotografia.objects.order_by("data_fotografia").filter(publicada=True)    #se for ordenar pelo mais antigo é somente aidionar um - na data_fotografia
     return render(request, 'galeria/index.html', {"cards": fotografias})
 
 def imagem(request, foto_id):
